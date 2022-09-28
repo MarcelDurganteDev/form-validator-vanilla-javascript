@@ -1,5 +1,5 @@
 const form = document.getElementById('form');
-const inputUsername = document.getElementById('username');
+const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
@@ -25,10 +25,22 @@ function isValidEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
+// Check required fields
+function checkedRequired(inputArray) {
+    inputArray.forEach(function(input) {
+        if(input.value.trim() === '') {
+            showError(input, `${getFieldName(input)} is required`)
+        } else {
+            showSuccess(input)
+        }
+    });
+}
+
+
 // Event Listners
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
+    checkedRequired([username, email, password, password2]);
     
-
 });
