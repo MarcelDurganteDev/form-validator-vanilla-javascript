@@ -9,29 +9,41 @@
   </head>
 
   <body>
+    <!-- main container -->
     <div class="container">
+      <!-- form -->
       <form class="form" id="form">
+        <!-- Form title -->
         <h2>Register With Us</h2>
+        <!-- input username -->
         <div class="form-control">
           <label for="username">Username</label>
           <input type="text" id="username" placeholder="Enter username" />
           <small>Error message</small>
         </div>
+       <!--  input email -->
         <div class="form-control">
           <label for="email">Email</label>
           <input type="text" id="email" placeholder="Enter email" />
-          <small>Error message</small>
+          <small id="emailSmall">Error message</small>
         </div>
+         <!-- input password -->
         <div class="form-control">
           <label for="password">password</label>
           <input type="password" id="password" placeholder="Enter password" />
           <small>Error message</small>
         </div>
+        <!-- input confirm password -->
         <div class="form-control">
           <label for="password2">Confirm Password</label>
-          <input type="password" id="password2" placeholder="Enter password again" />
+          <input
+            type="password"
+            id="password2"
+            placeholder="Enter password again"
+          />
           <small>Error message</small>
         </div>
+         <!-- submit button -->
         <button type="submit">Submit</button>
       </form>
     </div>
