@@ -20,16 +20,10 @@ function showSuccess(input) {
 }
 
 // Check email is valid
-function checkEmail(input) {
+function isValidEmail(email) {
   const re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  /* return re.test(String(email).toLowerCase()); */
-  if(re.test(input.value)) {
-    console.log(input.value);
-    showSuccess(input);
-} else {
-    showError(input, 'Email is not valid.')
-  }
+  return re.test(String(email).toLowerCase());
 }
 
 // Check required fields
@@ -54,13 +48,6 @@ function checkLength(input, min, max) {
     }
 }
 
-// Check if passwords match
-function checkIfPasswordsMatch(input1, input2) {
-    if(input1.value !== input2.value) {
-        showError(input2, 'Passwords do not match.')
-    }
-}
-
 // Get input field name to upper case the first letter only
 function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -73,6 +60,5 @@ form.addEventListener("submit", function (e) {
   checkRequired([username, email, password, password2]);
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
-  checkEmail(email);
-  checkIfPasswordsMatch(password, password2)
+
 });
