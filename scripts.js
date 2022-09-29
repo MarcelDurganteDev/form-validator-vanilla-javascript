@@ -76,3 +76,4 @@ form.addEventListener("submit", function (e) {
   checkEmail(email);
   checkIfPasswordsMatch(password, password2)
 });
+// End of Project - version:1.0.0
